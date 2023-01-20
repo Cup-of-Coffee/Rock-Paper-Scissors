@@ -19,42 +19,32 @@ function getComputerChoice(){
 
 /*
 Go through a round of Rock Paper Scissors.
+todo: implement a error system and ability to input the proper answer.
+todo: implement a method to lowercase any inputted answer.
 */
-function playRound() {
+function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
     let winner;
-    let i = 0;
-
-    do{
-        let playerSelection = prompt("Choose Rock Paper or Scissors!");
-
-        if(playerSelection === "Rock" && computerSelection === "Scissors"){
-            winner = "player";
-            i = i++;
-        }else if(playerSelection === "Paper" && computerSelection === "Rock"){
-            winner = "player";
-            i = i++;
-        }else if(playerSelection === "Scissors" && computerSelection === "Paper"){
-            winner = "player";
-            i = i++;
-        }else if(computerSelection === "Rock" && playerSelection === "Scissors"){
-            winner = "computer";
-            i = i++;
-        }else if(computerSelection === "Paper" && playerSelection === "Rock"){
-            winner = "computer";
-            i = i++;
-        }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
-            winner = "computer";
-            i = i++;
-        }else if(playerSelection === "Paper" || playerSelection === "Paper" || playerSelection === "Scissors"){
-            winner = "no one";
-            i = i++;
-        }else{
-            console.log("Error! Please correctly input Rock Paper or Scissors!")
-        }
-    }while(i < 1);
 
     console.log("Player was " + playerSelection + " and Computer was " + computerSelection);
+
+    if(playerSelection === "Rock" && computerSelection === "Scissors"){
+        winner = "player";
+    }else if(playerSelection === "Paper" && computerSelection === "Rock"){
+        winner = "player";
+    }else if(playerSelection === "Scissors" && computerSelection === "Paper"){
+        winner = "player";
+    }else if(computerSelection === "Rock" && playerSelection === "Scissors"){
+        winner = "computer";
+    }else if(computerSelection === "Paper" && playerSelection === "Rock"){
+        winner = "computer";
+    }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
+        winner = "computer";
+    }else if(playerSelection === "Paper" || playerSelection === "Paper" || playerSelection === "Scissors"){
+        winner = "no one";
+    }else{
+        winner = "error";
+    }
 
     return winner;
 }
@@ -69,7 +59,9 @@ function game(){
     for (let i = 1; i < 6; i++){
         console.log("It's round " + i);
 
-        let outcome = playRound();
+        let playerSelection = prompt("Choose Rock Paper or Scissors!");
+
+        let outcome = playRound(playerSelection);
 
         if(outcome == "player"){
             console.log("Player won the round!");
@@ -79,9 +71,11 @@ function game(){
             console.log("Computer won the round!");
             computerScore = computerScore++;
             i = i++;
-        }else{
+        }else if(outcome == "no one"){
             console.log("It was a tie.")
             i = i++;
+        }else if(outcome == "error"){
+            console.log("Error! Please input Rock Paper or Scissors!")
         }
     };
 
