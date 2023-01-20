@@ -17,5 +17,3 @@ function getComputerChoice(){
 function name(params) {
     
 }
-
-
