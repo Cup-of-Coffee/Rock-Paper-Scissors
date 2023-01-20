@@ -20,36 +20,57 @@ function getComputerChoice(){
 /*
 Go through a round of Rock Paper Scissors.
 */
-function playRound() {
-    const playerSelection = "Rock";
+function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
-    let outcome;
+    let winner;
 
     console.log("Player was " + playerSelection + " and Computer was " + computerSelection);
 
     if(playerSelection === "Rock" && computerSelection === "Scissors"){
-        console.log("You win!");
+        winner = "player";
     }else if(playerSelection === "Paper" && computerSelection === "Rock"){
-        console.log("You win!");
+        winner = "player";
     }else if(playerSelection === "Scissors" && computerSelection === "Paper"){
-        console.log("You win!");
+        winner = "player";
     }else if(computerSelection === "Rock" && playerSelection === "Scissors"){
-        console.log("You lose!");
+        winner = "computer";
     }else if(computerSelection === "Paper" && playerSelection === "Rock"){
-        console.log("You lose!");
+        winner = "computer";
     }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
-        console.log("You lose!");
+        winner = "computer";
     }else{
-        console.log("You tie!");
+        winner = "no one";
     }
 
-    return outcome;
+    return winner;
 }
 
+/*
+Run through five rounds of Rock Paper and Scissors, calculating the score to decide if the Player was a winner, loser or tied.
+*/
 function game(){
-    for (let i = 0; i < 5; i++){
-        
+    let playerScore;
+    let computerScore;
 
+    for (let i = 1; i < 6; i++){
+        console.log("It's round " + i);
+
+        let playerSelection = prompt("Choose Rock Paper or Scissors!");
+
+        let outcome = playRound(playerSelection);
+
+        if(outcome == "player"){
+            playerScore = playerScore++;
+            i = i++;
+        }else if(outcome == "computer"){
+            computerScore = computerScore++;
+            i = i++;
+        }else{
+            console.log("It was a tie.")
+            i = i++;
+        }
 
     };
+
+
 }
