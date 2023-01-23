@@ -27,38 +27,27 @@ function getComputerChoice(){
 /*
 Complete a round of Rock Paper Scissors.
 */
-function playRound(playerSelection) {
-    const computerSelection = getComputerChoice();
+function decideWinner(playerSelection, computerSelection) {
     let winner;
-
-    console.log("Player was " + playerSelection + " and Computer was " + computerSelection);
 
     if(playerSelection === "Rock" && computerSelection === "Scissors"){
         winner = "player";
-        displayResults('Player Won');
     }else if(playerSelection === "Paper" && computerSelection === "Rock"){
         winner = "player";
-        displayResults('Player Won');
     }else if(playerSelection === "Scissors" && computerSelection === "Paper"){
         winner = "player";
-        displayResults('Player Won');
     }else if(computerSelection === "Rock" && playerSelection === "Scissors"){
         winner = "computer";
-        displayResults('Computer Won');
     }else if(computerSelection === "Paper" && playerSelection === "Rock"){
         winner = "computer";
-        displayResults('Computer Won');
     }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
         winner = "computer";
-        displayResults('Computer Won');
     }else if(playerSelection === "Paper" || playerSelection === "Paper" || playerSelection === "Scissors"){
         winner = "no one";
-        displayResults('It was a tie!');
     }else{
         winner = "error";
-        displayResults('Error');
     }
-
+    
     return winner;
 }
 
@@ -82,12 +71,12 @@ function displayResults(input){
 /*
 Display player and computer choices.
 */
-function displaySelections(input){
+function displaySelections(playerInput,computerInput){
     const selections = document.querySelector('#selections');
 
     const content = document.createElement('div');
     content.classList.add('content');
-    content.textContent = input;
+    content.textContent = "Player choose " + playerInput + " and Computer choose " + computerInput + "!";
 
     selections.appendChild(content);
 }
@@ -97,16 +86,33 @@ function displaySelections(input){
 /*
 Run a game round, using the playRound, displaySelections and displayResults functions.
 */
-function game(input){
+function game(playerInput){
     let i = 0;
 
     for(i = 0; i < 5; i++){
-        playRound(input);
-        displaySelections();
-        displayResults();
+        let computerInput = getComputerChoice();
+        let results = playRound(playerInput, computerInput);
+        displaySelections(playerInput, computerInput);
+        displayResults(results);
         i++;
     };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
