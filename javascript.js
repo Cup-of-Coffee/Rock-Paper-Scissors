@@ -56,7 +56,7 @@ function displayResults(input){
 
     const content = document.createElement('div');
     content.classList.add('content');
-    content.textContent = input;
+    content.textContent = "The winner is " + input + ".";
 
     results.appendChild(content);
 }
@@ -82,16 +82,14 @@ function displaySelections(playerInput,computerInput){
 Play a round, running the getComputerChoice, decideWinner, displaySelections and displayResults functions.
 */
 function playRound(playerInput){
-    let i = 0;
+    let computerInput = getComputerChoice();
+    
+    let results = decideWinner(playerInput, computerInput);
 
-    for(i = 0; i < 5; i++){
-        let computerInput = getComputerChoice();
-        let results = decideWinner(playerInput, computerInput);
-        displaySelections(playerInput, computerInput);
-        displayResults(results);
-        i++;
-    };
-}
+    displaySelections(playerInput, computerInput);
+    
+    displayResults(results);
+};
 
 
 /*
@@ -99,9 +97,23 @@ Simulate 5 rounds of Rock Paper Scissors.
 */
 function game(){
     let playerScore = 0;
-    let computerScore = 0;
-
-
+    let computerScore = 0; 
+    
+    for(i = 0; i < 5; i++){
+        let computerInput = getComputerChoice();
+        displaySelections(playerInput, computerInput);
+        let results = decideWinner(playerInput, computerInput);
+        displayResults(results);
+        if(results === "player"){
+            playerScore++;
+            i++;
+        }else if(results === "computer"){
+            computerScore++;
+            i++;
+        }else{
+            console.log('Error detected!')
+        }
+    };
 
 }
 
