@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <title>Index</title>
         <link rel="stylesheet" href="style.css">
-        <script src="javascript.js"></script>
+        <script src="javascript.js">
+            game();
+        </script>
     </head>
 
     <body>
@@ -13,16 +15,14 @@
         </div>
         
         <div>
-            <button id="rock_button" onclick="game('Rock')">Rock</button>
+            <button id="rock_button" onclick="playRound('Rock')">Rock</button>
 
-            <button id="paper_button" onclick="game('Paper')">Paper</button>
+            <button id="paper_button" onclick="playRound('Paper')">Paper</button>
     
-            <button id="scissors_button" onclick="game('Scissors')">Scissors</button>
+            <button id="scissors_button" onclick="playRound('Scissors')">Scissors</button>
         </div> 
 
-        <div id="selections">
-
-        </div>
+        <div id="selections"></div>
 
         <div id="results"></div>
     </body>

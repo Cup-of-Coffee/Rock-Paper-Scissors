@@ -1,9 +1,4 @@
 
-let playerScore = 0;
-let computerScore = 0;
-
-
-
 /*
 Use Math.random to generate one of three choices for computer opponent.
 */
@@ -42,7 +37,7 @@ function decideWinner(playerSelection, computerSelection) {
         winner = "computer";
     }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
         winner = "computer";
-    }else if(playerSelection === "Paper" || playerSelection === "Paper" || playerSelection === "Scissors"){
+    }else if(playerSelection || computerSelection){
         winner = "no one";
     }else{
         winner = "error";
@@ -84,14 +79,14 @@ function displaySelections(playerInput,computerInput){
 
 
 /*
-Run a game round, using the playRound, displaySelections and displayResults functions.
+Play a round, running the getComputerChoice, decideWinner, displaySelections and displayResults functions.
 */
-function game(playerInput){
+function playRound(playerInput){
     let i = 0;
 
     for(i = 0; i < 5; i++){
         let computerInput = getComputerChoice();
-        let results = playRound(playerInput, computerInput);
+        let results = decideWinner(playerInput, computerInput);
         displaySelections(playerInput, computerInput);
         displayResults(results);
         i++;
@@ -99,14 +94,16 @@ function game(playerInput){
 }
 
 
+/*
+Simulate 5 rounds of Rock Paper Scissors.
+*/
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
 
 
 
-
-
-
-
-
+}
 
 
 
