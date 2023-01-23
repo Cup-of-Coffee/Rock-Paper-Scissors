@@ -49,9 +49,20 @@ function playRound(playerSelection) {
     return winner;
 }
 
-/*
-Run through five rounds of Rock Paper and Scissors, calculating the score to decide if the Player was a winner, loser or tied.
-*/
+const rock_button = docuemnt.qeurySelector('#rock_button');
+rock_button.onclick = () => alert("Test");
+
+
+
+
+
+
+
+
+
+
+
+/*  First verison: Run through five rounds of Rock Paper and Scissors, calculating the score to decide if the Player was a winner, loser or tied.
 function game(){
     let playerScore;
     let computerScore;
@@ -90,3 +101,4 @@ function game(){
     }
 
 }
+*/
