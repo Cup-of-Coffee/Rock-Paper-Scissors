@@ -8,13 +8,21 @@
     </head>
 
     <body>
-        <p>Rock Paper Scissors</p>
+        <div>
+            <p>Rock Paper Scissors</p>
+        </div>
         
-        <button id="rock_button">Rock</button>
+        <div>
+            <button id="rock_button" onclick="game('Rock')">Rock</button>
 
-        <button id="paper_button">Paper</button>
+            <button id="paper_button" onclick="game('Paper')">Paper</button>
+    
+            <button id="scissors_button" onclick="game('Scissors')">Scissors</button>
+        </div> 
 
-        <button id="scissors_button">Scissors</button>
+        <div id="selections">
+
+        </div>
 
         <div id="results"></div>
     </body>
