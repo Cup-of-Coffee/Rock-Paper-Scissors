@@ -52,13 +52,9 @@ function decideWinner(playerSelection, computerSelection) {
 Display results of previous round.
 */
 function displayResults(input){
-    const results = document.querySelector('#results');
-
-    const content = document.createElement('div');
+    const content = document.getElementById('results');
     content.classList.add('content');
     content.textContent = "The winner is " + input + ".";
-
-    results.appendChild(content);
 }
 
 
@@ -67,13 +63,9 @@ function displayResults(input){
 Display player and computer choices.
 */
 function displaySelections(playerInput,computerInput){
-    const selections = document.querySelector('#selections');
-
-    const content = document.createElement('div');
+    const content = document.getElementById('selections');
     content.classList.add('content');
     content.textContent = "Player choose " + playerInput + " and Computer choose " + computerInput + "!";
-
-    selections.appendChild(content);
 }
 
 
@@ -90,6 +82,11 @@ function playRound(playerInput){
     
     displayResults(results);
 };
+
+
+
+
+
 
 
 /*
