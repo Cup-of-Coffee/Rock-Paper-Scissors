@@ -6,24 +6,22 @@ let playerScore = 0;
 let computerScore = 0;
 let roundCounter = 0;
 
-playGame();
-
 /*
 A function to execute other functions as functional decomposition. If roundCounter = 5, then end the game and decide winner.
 */
 function playGame(playerInput){
 
-if(roundCounter = 5){
+if(roundCounter >= 5){
     endGame();
     return;
 };
 
+roundCounter++;
+
 let computerInput = getComputerChoice();
 
-decideWinner(playerInput, computerInput);
-displayResults(playerInput, computerInput);
-
-roundCounter++;
+let winnerOfRound = decideWinner(playerInput, computerInput);
+displayResults(playerInput, computerInput, winnerOfRound);
 }
 
 /*
@@ -82,26 +80,9 @@ function decideWinner(playerInput,computerInput){
 
 
 
-
-
-
 /*
 
 
-
-
-Complete a round of Rock Paper Scissors.
-
-
-
-
-Display results of previous round.
-
-function displayResults(input){
-    const content = document.getElementById('results');
-    content.classList.add('content');
-    content.textContent = "The winner is " + input + ".";
-}
 
 
 
