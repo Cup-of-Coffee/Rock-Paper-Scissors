@@ -79,25 +79,25 @@ function decideWinner(playerInput,computerInput){
 Update divs with player and computer choices, the winner of the round, the current scores and current round.
 */
 function displayResults(playerInput, computerInput, winnerOfRound){
-    const inputs = document.getElementById('results');
+    const roundCount = document.getElementById('roundCount');
+    roundCount.classList.add('roundCount');
+    roundCount.textContent = "Round " + roundCounter;
+
+    const playerDisplayScore = document.getElementById('playerDisplayScore');
+    playerDisplayScore.classList.add('playerDisplayScore');
+    playerDisplayScore.textContent = "Player's Score: " + playerScore;
+
+    const computerDisplayScore = document.getElementById('computerDisplayScore');
+    computerDisplayScore.classList.add('computerDisplayScore');
+    computerDisplayScore.textContent = "Computer's Score: " + computerScore;
+
+    const inputs = document.getElementById('inputs');
     inputs.classList.add('inputs');
     inputs.textContent = "You picked " + playerInput + ", and the computer picked " + computerInput + ".";
 
     const results = document.getElementById('results');
-    content.classList.add('results');
-    results.textContent = "The winner is " + winnerOfRound + ".";
-
-    const playerDisplayScore = document.getElementById('playerDisplayScore');
-    playerDisplayScore.classList.add('playerDisplayScore');
-    playerDisplayScore.textContent = playerScore;
-
-    const computerDisplayScore = document.getElementById('computerDisplayScore');
-    computerDisplayScore.classList.add('computerDisplayScore');
-    computerDisplayScore.textContent = computerScore;
-
-    const roundCount = document.getElementById('roundCount');
-    roundCount.classList.add('roundCount');
-    roundCount.textContent = roundCounter;
+    results.classList.add('results');
+    results.textContent = "The winner is of the round is " + winnerOfRound + ".";
 }
 
 /*
@@ -108,7 +108,7 @@ function endGame(){
 
     if(playerScore > computerScore){
         winner = "you";
-    }else if(playerSCore < computerScore){
+    }else if(playerScore < computerScore){
         winner = "the computer";
     }else{
         winner = "is no one, you both tied"
@@ -116,3 +116,6 @@ function endGame(){
 
     alert("Game Over! The winner of the game is " + winner + "!");
 }
+
+
+
