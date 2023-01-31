@@ -50,16 +50,22 @@ function decideWinner(playerInput,computerInput){
 
     if(playerSelection === "Rock" && computerSelection === "Scissors"){
         winner = "player";
+        playerScore++;
     }else if(playerSelection === "Paper" && computerSelection === "Rock"){
         winner = "player";
+        playerScore++;
     }else if(playerSelection === "Scissors" && computerSelection === "Paper"){
         winner = "player";
+        playerScore++;
     }else if(computerSelection === "Rock" && playerSelection === "Scissors"){
         winner = "computer";
+        computerScore++;
     }else if(computerSelection === "Paper" && playerSelection === "Rock"){
         winner = "computer";
+        computerScore++;
     }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
         winner = "computer";
+        computerScore++;
     }else if(playerSelection || computerSelection){
         winner = "no one";
     }else{
@@ -94,73 +100,19 @@ function displayResults(playerInput, computerInput, winnerOfRound){
     roundCount.textContent = roundCounter;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*
-
-
-
-
-
-
-Display player and computer choices.
-
-function displaySelections(playerInput,computerInput){
-    const content = document.getElementById('selections');
-    content.classList.add('content');
-    content.textContent = "Player choose " + playerInput + " and Computer choose " + computerInput + "!";
-}
-
-
-
-
-Play a round, running the getComputerChoice, decideWinner, displaySelections and displayResults functions.
-
-function playRound(playerInput){
-    let computerInput = getComputerChoice();
-    
-    let results = decideWinner(playerInput, computerInput);
-
-    displaySelections(playerInput, computerInput);
-    
-    displayResults(results);
-};
-
-
-
-
-Simulate 5 rounds of Rock Paper Scissors.
-
-function game(){
-    let playerScore = 0;
-    let computerScore = 0; 
-    
-    for(i = 0; i < 5; i++){
-        let computerInput = getComputerChoice();
-
-
-        displaySelections(playerInput, computerInput);
-        let results = decideWinner(playerInput, computerInput);
-        displayResults(results);
-        if(results === "player"){
-            playerScore++;
-            i++;
-        }else if(results === "computer"){
-            computerScore++;
-            i++;
-        }else{
-            console.log('Error detected!')
-        }
-    };
-
-}
+End the game with a alert displaying the final winner.
 */
+function endGame(){
+    let winner;
+
+    if(playerScore > computerScore){
+        winner = "you";
+    }else if(playerSCore < computerScore){
+        winner = "the computer";
+    }else{
+        winner = "is no one, you both tied"
+    }
+
+    alert("Game Over! The winner of the game is " + winner + "!");
+}
