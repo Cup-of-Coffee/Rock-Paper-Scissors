@@ -2,13 +2,29 @@
 /*
 Initial game scores and execution.
 */
-let playerScore = "0";
-let computerScore = "0";
-let roundCounter = "0";
+let playerScore = 0;
+let computerScore = 0;
+let roundCounter = 0;
 
-game();
+playGame();
 
+/*
+A function to execute other functions as functional decomposition. If roundCounter = 5, then end the game and decide winner.
+*/
+function playGame(playerInput){
 
+if(roundCounter = 5){
+    endGame();
+    return;
+};
+
+let computerInput = getComputerChoice();
+
+decideWinner(playerInput, computerInput);
+displayResults(playerInput, computerInput);
+
+roundCounter++;
+}
 
 
 
@@ -30,7 +46,7 @@ game();
 
 /*
 Use Math.random to generate one of three choices for computer opponent.
-*/
+
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * 3);
     let result;
@@ -48,9 +64,9 @@ function getComputerChoice(){
 
 
 
-/*
+
 Complete a round of Rock Paper Scissors.
-*/
+
 function decideWinner(playerSelection, computerSelection) {
     let winner;
 
@@ -77,9 +93,9 @@ function decideWinner(playerSelection, computerSelection) {
 
 
 
-/*
+
 Display results of previous round.
-*/
+
 function displayResults(input){
     const content = document.getElementById('results');
     content.classList.add('content');
@@ -88,9 +104,9 @@ function displayResults(input){
 
 
 
-/*
+
 Display player and computer choices.
-*/
+
 function displaySelections(playerInput,computerInput){
     const content = document.getElementById('selections');
     content.classList.add('content');
@@ -99,9 +115,9 @@ function displaySelections(playerInput,computerInput){
 
 
 
-/*
+
 Play a round, running the getComputerChoice, decideWinner, displaySelections and displayResults functions.
-*/
+
 function playRound(playerInput){
     let computerInput = getComputerChoice();
     
@@ -114,9 +130,9 @@ function playRound(playerInput){
 
 
 
-/*
+
 Simulate 5 rounds of Rock Paper Scissors.
-*/
+
 function game(){
     let playerScore = 0;
     let computerScore = 0; 
@@ -138,57 +154,6 @@ function game(){
             console.log('Error detected!')
         }
     };
-
-}
-
-/*
-Call the game function at window load.
-*/
-game();
-
-
-
-
-
-
-
-/*  First verison: Run through five rounds of Rock Paper and Scissors, calculating the score to decide if the Player was a winner, loser or tied.
-function game(){
-    let playerScore;
-    let computerScore;
-
-    for (let i = 1; i < 6; i++){
-        console.log("It's round " + i);
-
-        let playerSelection = prompt("Choose Rock Paper or Scissors!");
-
-        let outcome = playRound(playerSelection);
-
-        if(outcome == "player"){
-            console.log("Player won the round!");
-            playerScore = playerScore++;
-            i = i++;
-        }else if(outcome == "computer"){
-            console.log("Computer won the round!");
-            computerScore = computerScore++;
-            i = i++;
-        }else if(outcome == "no one"){
-            console.log("It was a tie.")
-            i = i++;
-        }else if(outcome == "error"){
-            console.log("Error! Please input Rock Paper or Scissors!")
-        }
-    };
-
-    console.log("It's the end of the game.");
-
-    if(playerScore > computerScore){
-        console.log("Player won with " + playerScore + "points!");
-    }else if(computerScore > playerScore){
-        console.log("Computer won with " + computerScore + "points!");
-    }else{
-        console.log("Player and Computer tied.");
-    }
 
 }
 */
