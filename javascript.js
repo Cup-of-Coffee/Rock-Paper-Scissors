@@ -121,5 +121,6 @@ function endGame(){
 Ideas to polish game:
 @ Add the ability to restart after the game is finished.
 @ Add CSS to make it look prettier.
+@ Add Emojis.
 @ ...
 */
