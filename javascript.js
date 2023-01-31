@@ -48,25 +48,25 @@ Decide winner of the current round by comparing the two inputs against a if stat
 function decideWinner(playerInput,computerInput){
     let winner;
 
-    if(playerSelection === "Rock" && computerSelection === "Scissors"){
+    if(playerInput === "Rock" && computerInput === "Scissors"){
         winner = "player";
         playerScore++;
-    }else if(playerSelection === "Paper" && computerSelection === "Rock"){
+    }else if(playerInput === "Paper" && computerInput === "Rock"){
         winner = "player";
         playerScore++;
-    }else if(playerSelection === "Scissors" && computerSelection === "Paper"){
+    }else if(playerInput === "Scissors" && computerInput === "Paper"){
         winner = "player";
         playerScore++;
-    }else if(computerSelection === "Rock" && playerSelection === "Scissors"){
+    }else if(playerInput === "Scissors" && computerInput === "Rock"){
         winner = "computer";
         computerScore++;
-    }else if(computerSelection === "Paper" && playerSelection === "Rock"){
+    }else if(playerInput === "Rock" && computerInput === "Paper"){
         winner = "computer";
         computerScore++;
-    }else if(computerSelection === "Scissors" && playerSelection === "Paper"){
+    }else if(playerInput === "Paper" && computerInput === "Scissors"){
         winner = "computer";
         computerScore++;
-    }else if(playerSelection || computerSelection){
+    }else if(playerInput || computerInput){
         winner = "no one";
     }else{
         winner = "a error has occurred";
