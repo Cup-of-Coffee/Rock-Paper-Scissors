@@ -1,5 +1,34 @@
 
 /*
+Initial game scores and execution.
+*/
+let playerScore = "0";
+let computerScore = "0";
+let roundCounter = "0";
+
+game();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 Use Math.random to generate one of three choices for computer opponent.
 */
 function getComputerChoice(){
@@ -85,10 +114,6 @@ function playRound(playerInput){
 
 
 
-
-
-
-
 /*
 Simulate 5 rounds of Rock Paper Scissors.
 */
@@ -98,6 +123,8 @@ function game(){
     
     for(i = 0; i < 5; i++){
         let computerInput = getComputerChoice();
+
+
         displaySelections(playerInput, computerInput);
         let results = decideWinner(playerInput, computerInput);
         displayResults(results);
@@ -114,7 +141,10 @@ function game(){
 
 }
 
-
+/*
+Call the game function at window load.
+*/
+game();
 
 
 
