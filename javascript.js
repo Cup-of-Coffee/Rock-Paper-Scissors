@@ -69,6 +69,31 @@ function decideWinner(playerInput,computerInput){
     return winner;
 }
 
+/*
+Update divs with player and computer choices, the winner of the round, the current scores and current round.
+*/
+function displayResults(playerInput, computerInput, winnerOfRound){
+    const inputs = document.getElementById('results');
+    inputs.classList.add('inputs');
+    inputs.textContent = "You picked " + playerInput + ", and the computer picked " + computerInput + ".";
+
+    const results = document.getElementById('results');
+    content.classList.add('results');
+    results.textContent = "The winner is " + winnerOfRound + ".";
+
+    const playerDisplayScore = document.getElementById('playerDisplayScore');
+    playerDisplayScore.classList.add('playerDisplayScore');
+    playerDisplayScore.textContent = playerScore;
+
+    const computerDisplayScore = document.getElementById('computerDisplayScore');
+    computerDisplayScore.classList.add('computerDisplayScore');
+    computerDisplayScore.textContent = computerScore;
+
+    const roundCount = document.getElementById('roundCount');
+    roundCount.classList.add('roundCount');
+    roundCount.textContent = roundCounter;
+}
+
 
 
 
