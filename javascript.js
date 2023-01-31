@@ -117,5 +117,9 @@ function endGame(){
     alert("Game Over! The winner of the game is " + winner + "!");
 }
 
-
-
+/*
+Ideas to polish game:
+@ Add the ability to restart after the game is finished.
+@ Add CSS to make it look prettier.
+@ ...
+*/
