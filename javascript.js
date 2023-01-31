@@ -26,27 +26,9 @@ displayResults(playerInput, computerInput);
 roundCounter++;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 Use Math.random to generate one of three choices for computer opponent.
-
+*/
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * 3);
     let result;
@@ -62,12 +44,10 @@ function getComputerChoice(){
     return result;
 }
 
-
-
-
-Complete a round of Rock Paper Scissors.
-
-function decideWinner(playerSelection, computerSelection) {
+/*
+Decide winner of the current round by comparing the two inputs against a if statement.
+*/
+function decideWinner(playerInput,computerInput){
     let winner;
 
     if(playerSelection === "Rock" && computerSelection === "Scissors"){
@@ -85,11 +65,32 @@ function decideWinner(playerSelection, computerSelection) {
     }else if(playerSelection || computerSelection){
         winner = "no one";
     }else{
-        winner = "error";
+        winner = "a error has occurred";
     }
     
     return winner;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+Complete a round of Rock Paper Scissors.
 
 
 
