@@ -16,13 +16,20 @@ body {
 
 .game {
     text-align: center;
-    
+
     display: flex;
     flex-direction: column;
 }
 
-.buttons {
+.picks {
     display: flex;
     justify-content: center;
 }
+
+.picks button {
+    font-size: 100px;
+    background-color: #ffffff00;
+    border: none;
+}
+
 
