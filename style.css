@@ -1,15 +1,28 @@
 
-.container {
+body {
+    background-color: grey;
+}
 
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
-
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .game {
+    text-align: center;
     
+    display: flex;
+    flex-direction: column;
 }
 
-
+.buttons {
+    display: flex;
+    justify-content: center;
+}
 
